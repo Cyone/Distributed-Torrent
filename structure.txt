@@ -1,0 +1,37 @@
+bittorrent-client/
+├── cmd/
+│   ├── client/           # CLI main (bittorrent-client)
+│   │   └── main.go
+│   ├── gui/              # GUI main (bittorrent-gui)
+│   │   └── main.go
+│   └── server/           # gRPC server main (runs on VPS or local)
+│       └── main.go
+├── internal/
+│   ├── bencode/          # Bencode parsing (custom or bencode-go wrapper)
+│   ├── peer/             # Peer protocol and metadata exchange
+│   ├── piece/            # Piece management and file assembly
+│   ├── tracker/          # Tracker communication
+│   ├── magnet/           # Magnet link parsing and metadata fetching
+│   └── server/           # gRPC/REST server logic
+├── pkg/                  # Optional: reusable packages
+│   └── bencode/          # Custom Bencode parser (stretch goal)
+├── api/
+│   └── bittorrent.proto  # gRPC API definitions
+├── configs/
+│   └── config.yaml       # Default ports, log levels, SSH settings
+├── test/
+│   ├── testdata/         # Sample .torrent files, magnet links
+│   └── mock/             # Mock tracker/peer responses
+├── scripts/
+│   ├── build.sh          # Build CLI/GUI binaries
+│   ├── lint.sh           # Run golangci-lint
+│   └── setup-vps.sh      # Configure VPS with SSH
+├── docs/
+│   ├── architecture.md   # System design (CLI, GUI, gRPC, SSH)
+│   ├── vps-setup.md      # VPS and SSH tunneling guide
+│   └── screenshots/      # GUI screenshots
+├── go.mod                # Module: github.com/yourname/bittorrent-client
+├── go.sum                # Dependency checksums
+├── README.md             # Setup, usage, features
+├── LICENSE               # MIT or Apache 2.0
+└── .gitignore            # Ignore binaries, logs, temp files
